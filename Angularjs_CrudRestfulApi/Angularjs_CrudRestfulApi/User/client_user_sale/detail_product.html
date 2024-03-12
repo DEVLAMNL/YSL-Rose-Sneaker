@@ -1,0 +1,57 @@
+<style>
+    /* Custom styles for product detail page */
+    .product-box {
+        border: 1px solid #ccc;
+        padding: 20px;
+        margin-bottom: 20px;
+    }
+
+    .product-box img {
+        width: 100%;
+        height: auto;
+        margin-bottom: 10px;
+    }
+
+    .product-box .card-body {
+        text-align: center;
+    }
+
+    .product-box .card-body h5 {
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+
+    .product-box .card-body p {
+        font-size: 16px;
+        margin-bottom: 15px;
+    }
+
+    .product-box .btn {
+        font-size: 16px;
+    }
+</style>
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <!-- Product Detail -->
+            <div class="product-box">
+                <img src="https://d3vfig6e0r0snz.cloudfront.net/rcYjnYuenaTH5vyDF/images/products/4cc2932fb7ec7002ee28c1eaf4d1f23d.webp"
+                    alt="Product Image">
+                <div class="card-body">
+                    <h5 class="card-title">Product Name {{new.ten}}</h5>
+                    <p>Product Quality:{{new.soluong}} </p>
+                    <p class="card-text" >Product Price {{new.giaban}}$</p>
+                    <p class="card-text">Product Description Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+                        nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+                        dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
+                        sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
+                        laborum.</p>
+                    <a href="#!/giohang" ng-click ="addTocart()"class="btn btn-primary">Thêm vào giỏ hàng</a>
+                </div>
+            </div>
+            <!-- End Product Detail -->
+        </div>
+    </div>
+</div>

@@ -1,0 +1,47 @@
+<style>
+    .product-box {
+        border: 1px solid #ccc;
+        padding: 20px;
+        margin-bottom: 20px;
+    }
+
+    .product-box img {
+        width: 100%;
+        height: auto;
+        margin-bottom: 10px;
+    }
+
+    .product-box .card-body {
+        text-align: center;
+    }
+
+    .product-box .card-body h5 {
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+
+    .product-box .card-body p {
+        font-size: 16px;
+        margin-bottom: 15px;
+    }
+
+    .product-box .btn {
+        font-size: 16px;
+    }
+</style>
+
+<div class="row">
+    <div class="col-lg-12">
+    </div>
+    <div class="col-lg-3" ng-repeat="li in listProduct">
+        <div class="product-box">
+            <img src="https://d3vfig6e0r0snz.cloudfront.net/rcYjnYuenaTH5vyDF/images/products/4cc2932fb7ec7002ee28c1eaf4d1f23d.webp"
+                alt="Product Image">
+            <div class="card-body">
+                <h5 class="card-title">{{li.ten}}</h5>
+                <p class="card-text">{{li.giaban}}$</p>
+                <a href="#!/detail/{{li.id}}" class="btn btn-primary">Detail</a>
+            </div>
+        </div>
+    </div>
+</div>

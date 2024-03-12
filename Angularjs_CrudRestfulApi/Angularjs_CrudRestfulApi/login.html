@@ -1,0 +1,12 @@
+<div class="container">
+    <div class="mb-3">
+        <label for="username" class="form-label">Tài khoản</label>
+        <input type="text" class="form-control" id="username" ng-model="inputvalue_login.username" style="height: 38px; width: 250px;">
+    </div>
+    <div class="mb-3">
+        <label for="password" class="form-label">Mật khẩu</label>
+        <input type="password" class="form-control" id="password" ng-model="inputvalue_login.password" style="height: 38px; width: 250px;">
+    </div>
+    <a ng-click="register()" type="button" class="btn btn-primary me-2" href="#!/register" style="height: 38px;">Register</a>
+    <a ng-click="login()" type="button" class="btn btn-primary" style="height: 38px;">Login</a>
+</div>

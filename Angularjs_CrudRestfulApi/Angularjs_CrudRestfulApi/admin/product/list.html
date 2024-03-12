@@ -1,0 +1,52 @@
+<div class="container">
+    <div class="shadow p-3 mb-5 bg-white rounded">
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" ng-model="ten" placeholder="Tìm kiếm sản phẩm"
+                style="margin-right: 20px">
+            <div class="input-group-append">
+                <button class="btn btn-outline-secondary" ng-click="searchName()" type="button">Tìm kiếm</button>
+            </div>
+        </div>
+    </div>
+    <div class="row" style="margin-bottom: 20px;">
+        <div class="col">
+            <span>
+                <a href="#!/product-add" class="btn btn-primary">Thêm sản phẩm</a>
+            </span>
+        </div>
+    </div>
+    <div class="shadow p-3 mb-5 bg-white rounded">
+        <table class="table table-bordered border border-brow">
+            <thead class="bg-primary text-white">
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Tên</th>
+                    <th scope="col">Số lượng</th>
+                    <th scope="col">Giá bán</th>
+                    <th scope="col">Trạng thái</th>
+                    <th scope="col">Thao tác</th>
+                    <th scope="col">Thao tác</th>
+                </tr>
+            </thead>
+            <tbody>
+                <div class="shadow p-3 mb-5 bg-white rounded" ng-show="new.length === 0">
+                    Không tìm thấy sản phẩm phù hợp.
+                </div>
+                
+                <tr ng-repeat="us in listProduct  | filter:ten">
+                    <td>{{us.id}}</td>
+                    <td>{{us.ten}}</td>
+                    <td>{{us.soluong}}</td>
+                    <td>{{us.giaban}}</td>
+                    <td>
+                        <span class="badge rounded-pill"
+                            ng-class="{'bg-danger': us.soluong < 1, 'bg-success': us.soluong >= 1}">
+                            {{us.soluong < 1 ? "Hết hàng" : "Còn hàng" }} </span>
+                    </td>
+                    <td><a href="#!/product-edit/{{us.id}}" class="btn btn-primary">Detail</a></td>
+                    <td><a ng-click="delete(us.id)" class="btn btn-primary">Delete</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

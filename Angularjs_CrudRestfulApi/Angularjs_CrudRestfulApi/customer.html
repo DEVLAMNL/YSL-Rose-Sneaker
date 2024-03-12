@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YSL Fashion</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="angular/libs/angular.min.js"></script>
+    <script src="angular/libs/route.min.js"></script>
+    <style>
+        .sidebar {
+            position: fixed;
+            top: 80px;
+            bottom: 0;
+            left: 0;
+            width: 250px;
+            background-color: #f8f9fa;
+            overflow-y: auto;
+            z-index: 1;
+        }
+
+        .main-content {
+            margin-left: 250px;
+            padding: 20px;
+            padding-top: 80px;
+        }
+
+        header {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 2;
+        }
+    </style>
+</head>
+
+<body ng-app="customer">
+    <header class="bg-dark text-white py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h3>YSL Rosé</h3>
+                </div>
+                <div class="col-md-8 text-right">
+                    <nav>
+                        <ul class="list-inline">
+                            <li class="list-inline-item">
+                                <a href="#">
+                                    <i class="fas fa-user"></i>
+                                </a>
+                            </li>
+                            <li class="list-inline-item"><a href="#!/trangchu">Trang chủ</a></li>
+                            <li class="list-inline-item"><a href="#">Sản phẩm</a></li>
+                            <li class="list-inline-item"><a href="#">Đăng ký / Đăng nhập</a></li>
+                            <li class="list-inline-item">
+                                <a href="#">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                        class="bi bi-cart-fill" viewBox="0 0 16 16">
+                                        <path
+                                            d="M5.804 11.503a2 2 0 1 0 0 3.993 2 2 0 0 0 0-3.993ZM1 1.5a.5.5 0 0 1 .5-.5h1.764L3.77.183a.5.5 0 1 1 .707-.707L5.292.793 6.5 2H13a.5.5 0 0 1 0 1H4.23L3.07 9.036a1 1 0 0 1-.97.73H1.5a.5.5 0 0 1 0-1h.6a2 2 0 0 0 1.84-1.23L6.2 3h5.118l1.051 4.667H6.5a.5.5 0 0 1 0-1h6.364l.778-1.946A1 1 0 0 1 14 4H6.978L5.805 1.503H1.5a.5.5 0 0 1-.5-.5Z">
+                                        </path>
+                                    </svg>
+                                    Giỏ hàng
+                                </a>
+                            </li>
+                            <span>user</span>
+                        </ul>
+                    </nav>
+                </div>
+
+            </div>
+        </div>
+    </header>
+
+    <div class="sidebar">
+        <h5>Danh mục sản phẩm</h5>
+        <ul>
+            <li>
+                <a href="#">1</a>
+            </li>
+            <li>
+                <a href="#">2</a>
+            </li>
+            <li>
+                <a href="#">3</a>
+            </li>
+            <li>
+                <a href="#">4</a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="main-content">
+        <div class="container mt-4">
+            <div class="row">
+
+            </div>
+        </div>
+
+        <div ng-view></div>
+    </div>
+
+    <footer class="bg-dark text-white py-4 mt-4">
+        <div class="container">
+            <p>&copy; 2024 Trang web bán quần áo. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="../controller/customerController.js"></script>
+    <script src="controller/cartController.js"></script>
+    <script src="../js/CustomerConfig.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,21 @@
+<div class="container mt-4">
+
+
+    <div class="form-group">
+        <label for="productName">Product Name:</label>
+        <input type="text" class="form-control" id="productName" ng-model="input.ten" required>
+    </div>
+
+    <div class="form-group">
+        <label for="quantity">Quantity:</label>
+        <input type="number" class="form-control" id="quantity" ng-model="input.soluong" required>
+    </div>
+
+    <div class="form-group">
+        <label for="price">Price:</label>
+        <input type="number" class="form-control" id="price" ng-model="input.giaban" required>
+    </div>
+
+    <button type="submit" class="btn btn-primary" ng-click="add()">Submit</button>
+
+</div>
