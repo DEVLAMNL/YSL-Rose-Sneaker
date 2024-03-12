@@ -29,5 +29,9 @@ myApp.config(function ($routeProvider) {
             templateUrl: "/admin/user/listUser.html",
             controller: userController
         })
+        .when('/inchoice',{
+            templateUrl: "/admin/inchoice/sales at the counter.html",
+            controller : inchoiceController
+        })
        
 })
