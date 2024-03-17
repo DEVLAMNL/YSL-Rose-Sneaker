@@ -1,0 +1,48 @@
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <form>
+                <div class="form-group">
+                    <label for="fullname">Họ tên</label>
+                    <input type="text" class="form-control" id="fullname" placeholder="Nhập họ tên" ng-model="kh.hoten">
+                </div>
+                <div class="form-group">
+                    <label for="phone">Số điện thoại</label>
+                    <input type="text" class="form-control" id="phone" placeholder="Nhập số điện thoại" ng-model="kh.sodienthoai">
+                </div>
+                <div class="form-group">
+                    <label for="address">Địa chỉ</label>
+                    <input type="text" class="form-control" id="address" placeholder="Nhập địa chỉ" ng-model="kh.diachi">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" class="form-control" id="email" placeholder="Nhập email" ng-model="kh.email">
+                </div>
+                <div class="form-group">
+                    <label for="dob">Ngày sinh</label>
+                    <input type="date" class="form-control" id="dob" ng-model="kh.ngaysinh">
+                </div>
+                <div class="form-group">
+                    <label for="gender">Giới tính</label>
+                    <select class="form-control" id="gender" ng-model="kh.gioitinh">
+                        <option>0</option>
+                        <option>1</option>
+                        <option>Khác</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="registration_date">Ngày đăng ký</label>
+                    <input type="date" class="form-control" id="registration_date" ng-model="kh.ngaydangky">
+                </div>
+                <div class="form-group">
+                    <label for="status">Trạng thái</label>
+                    <select class="form-control" id="status" ng-model="kh.trangthai">
+                        <option>0</option>
+                        <option>1</option>
+                    </select>
+                </div>
+                <button ng-click="create()" type="submit" class="btn btn-primary">Thêm</button>
+            </form>
+        </div>
+    </div>
+</div>

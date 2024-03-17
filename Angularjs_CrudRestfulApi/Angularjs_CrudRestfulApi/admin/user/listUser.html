@@ -1,11 +1,10 @@
 <div class="container">
     <h2>Thông Tin Khách Hàng</h2>
+    <a href="#!/khachhang/add">Thêm mới khách hàng</a>
     <table class="table table-striped">
         <thead>
             <tr>
                 <th>ID</th>
-                <th>Tên đăng nhập</th>
-                <th>Mật khẩu</th>
                 <th>Họ tên</th>
                 <th>Số điện thoại</th>
                 <th>Địa chỉ</th>
@@ -23,8 +22,6 @@
         <tbody>
             <tr ng-repeat="user in listUser">
                 <td>{{user.idkh}}</td>
-                <td>{{user.username}}</td>
-                <td>{{user.password}}</td>
                 <td>{{user.hoten}}</td>
                 <td>{{user.sodienthoai}}</td>
                 <td>{{user.diachi}}</td>
@@ -36,7 +33,7 @@
                 <td>{{user.trangthai == 0 ? "Active" :  "Inactive"}}</td>
                 <td>{{user.chucvu.ten_chucvu}}</td>
                 <td>
-                    <a href="">Detail</a>
+                    <a href="">Set Status</a>
                 </td>
                 <td>
                     <a href="">Exchange Status</a>

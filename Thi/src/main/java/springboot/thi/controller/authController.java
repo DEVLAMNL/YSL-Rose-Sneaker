@@ -32,10 +32,12 @@ public class authController {
     public List<khachhangdto> getall() {
         return khachhangService.GetAll();
     }
+
     @GetMapping("/DataUser")
-    public List<khachhang> DataUser(){
+    public List<khachhang> DataUser() {
         return khachhangRP.findAll();
     }
+
     @PostMapping("/login")
     public ResponseEntity<String> login(@RequestBody khachhang khachhang) {
 
@@ -52,5 +54,9 @@ public class authController {
 
         return ResponseEntity.ok("Đăng nhập thành công");
     }
-
+    @PostMapping("/create")
+    public ResponseEntity<khachhang> saveProduct(@RequestBody khachhang khachhang) {
+        khachhangRP.save(khachhang);
+        return new ResponseEntity<>(khachhang, HttpStatus.CREATED);
+    }
 }
