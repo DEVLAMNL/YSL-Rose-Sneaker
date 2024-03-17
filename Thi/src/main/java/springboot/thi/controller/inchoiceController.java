@@ -19,19 +19,15 @@ public class inchoiceController {
     @Autowired
     private InchoiceRepo inchoiceRepo;
 
-    @GetMapping("/inchoiceData")
-    public ResponseEntity<hoadon> Inchoice() {
+    @GetMapping("/Data")
+    public List<hoadon> Inchoice() {
         List<hoadon> listHoaDon = inchoiceRepo.findAll();
-        return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+        return listHoaDon;
     }
 
     @PostMapping("/createInchoice")
     public ResponseEntity<hoadon> createInchoice(@RequestBody hoadon hoadon) {
-        Random rd = new Random();
-        hoadon hd = new hoadon();
-        hd.setIdhd(rd.nextInt(99));
-        hd.setNgaytao(new Date());
-        hd = inchoiceRepo.save(hd);
-        return ResponseEntity.ok(hd);
+         inchoiceRepo.save(hoadon);
+        return ResponseEntity.ok(hoadon);
     }
 }

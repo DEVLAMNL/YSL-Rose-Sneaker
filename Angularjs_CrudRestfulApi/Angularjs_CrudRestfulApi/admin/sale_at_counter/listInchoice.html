@@ -1,0 +1,17 @@
+listInchoice
+
+<button ng-click="createInchoice()" class="btn btn-primary">Tạo</button>
+<table>
+    <thead>
+        <th>#</th>
+        <th>Ngày tạo</th>
+    </thead>
+
+    <tbody ng-repeat="i in listInchoice ">
+        <tr>
+            <th>{{i.idhd}}</th>
+            <th>{{i.ngaytao | date:'dd/MM/yyyy'}}</th>
+        </tr>
+    </tbody>
+    </thead>
+</table>
