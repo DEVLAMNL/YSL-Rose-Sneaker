@@ -1,17 +1,29 @@
-listInchoice
-
-<button ng-click="createInchoice()" class="btn btn-primary">Tạo</button>
-<table>
+<button ng-click="createInchoice()" class="btn btn-primary">Tạo hóa đơn</button>
+<table class="table table-striped">
     <thead>
-        <th>#</th>
-        <th>Ngày tạo</th>
+        <tr>
+            <th>#</th>
+            <th>Mã HD</th>
+            <th>Ngày tạo</th>
+            <th>Thời gian</th>
+            <th>Trạng thái</th>
+        </tr>
     </thead>
 
-    <tbody ng-repeat="i in listInchoice ">
-        <tr>
-            <th>{{i.idhd}}</th>
-            <th>{{i.ngaytao | date:'dd/MM/yyyy'}}</th>
+    <tbody>
+        <tr ng-repeat="i in listInchoice">
+            <td>{{ $index + 1 }}</td>
+            <td>{{ i.maHD }}</td>
+            <td>{{ i.ngaytao | date:'dd/MM/yyyy' }}</td>
+            <td>{{ i.ngaytao | date:'HH:mm:ss' }}</td>
+            <td>{{ i.trangthai == 0 ? "Chưa thanh toán" : "Đã thanh toán" }}</td>
         </tr>
     </tbody>
-    </thead>
+</table>
+<div class="d-flex justify-content-between align-items-center">
+    <h4 class="mb-0">Danh sách sản phẩm</h4>
+    <a href="#!/inchoice-listProduct"> <button class="btn btn-primary">Chọn sản phẩm</button></a>
+</div>
+<table>
+    <h4>Giỏ hàng</h4>
 </table>

@@ -30,4 +30,5 @@ public class inchoiceController {
          inchoiceRepo.save(hoadon);
         return ResponseEntity.ok(hoadon);
     }
+
 }

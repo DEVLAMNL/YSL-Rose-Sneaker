@@ -10,7 +10,6 @@ public class giohang {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idgh;
-    private int id_hd;
     private int id_sanpham;
     private int id_khachhang;
 

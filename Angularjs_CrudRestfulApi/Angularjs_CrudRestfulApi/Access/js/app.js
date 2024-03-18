@@ -41,5 +41,9 @@ myApp.config(function ($routeProvider) {
             templateUrl: "/admin/sale_at_counter/listInchoice.html",
             controller : inchoiceController
         })
+        .when('/inchoice-listProduct',{
+            templateUrl: "/admin/sale_at_counter/listProduct.html",
+            controller: productsController
+        })
        
 })
