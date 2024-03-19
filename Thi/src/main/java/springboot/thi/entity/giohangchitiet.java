@@ -12,7 +12,7 @@ public class giohangchitiet {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idghct;
-    private int id_gh;
+//    private int id_gh;
     private int id_hd;
     private int id_sanpham;
     private int soluong;
