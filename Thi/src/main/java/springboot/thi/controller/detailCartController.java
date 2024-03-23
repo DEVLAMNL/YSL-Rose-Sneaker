@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import springboot.thi.entity.giohangchitiet;
+import springboot.thi.entity.hoadon;
 import springboot.thi.entity.product;
 import springboot.thi.repo.cartDeatailsRepo;
 import springboot.thi.repo.productRepo;
@@ -18,17 +19,16 @@ public class detailCartController {
     @Autowired
     private cartDeatailsRepo cartDeatailsRepo;
 
-    @Autowired
-    private productRepo productRepo;
+//    @Autowired
+//    private productRepo productRepo;
 
-    @GetMapping("/list")
+    @GetMapping("/listCart")
     public List<giohangchitiet> listDetailCart() {
-        return cartDeatailsRepo.listCartDetails();
+        return cartDeatailsRepo.findAll();
     }
 
     @PostMapping("/add/{productId}")
     public ResponseEntity<String> addToCart(@PathVariable("productId") Integer productId) {
-        List<product> listPr = productRepo.findAllById(productId);
         giohangchitiet ghct = new giohangchitiet();
         ghct.setId_sanpham(productId);
         cartDeatailsRepo.save(ghct);

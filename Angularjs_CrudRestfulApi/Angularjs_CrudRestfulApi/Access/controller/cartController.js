@@ -1,11 +1,11 @@
-window.cartController = function ($http, $scope) {
-    $scope.product = {
-    }
+window.cartController = function ($http, $scope, $routeParams) {
+    $scope.Cart = function () {
+        const CartApi = "http://localhost:1235/DetailCart/listCart";
+        $http.get(CartApi).then(function (res) {
+            $scope.listCart = res.data;
+        });
+    };
+    
+    $scope.Cart();
 
-    $scope.addTocart = function () {
-        const api = "http://localhost:1235/cart/addproduct";
-        $http.post(api, $scope.product).then(function (res) {
-
-        })
-    }
-}
+};

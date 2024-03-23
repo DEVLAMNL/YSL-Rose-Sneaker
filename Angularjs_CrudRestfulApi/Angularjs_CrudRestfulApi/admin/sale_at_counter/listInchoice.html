@@ -1,29 +1,64 @@
-<button ng-click="createInchoice()" class="btn btn-primary">Tạo hóa đơn</button>
-<table class="table table-striped">
-    <thead>
-        <tr>
-            <th>#</th>
-            <th>Mã HD</th>
-            <th>Ngày tạo</th>
-            <th>Thời gian</th>
-            <th>Trạng thái</th>
-        </tr>
-    </thead>
-
-    <tbody>
-        <tr ng-repeat="i in listInchoice">
-            <td>{{ $index + 1 }}</td>
-            <td>{{ i.maHD }}</td>
-            <td>{{ i.ngaytao | date:'dd/MM/yyyy' }}</td>
-            <td>{{ i.ngaytao | date:'HH:mm:ss' }}</td>
-            <td>{{ i.trangthai == 0 ? "Chưa thanh toán" : "Đã thanh toán" }}</td>
-        </tr>
-    </tbody>
-</table>
-<div class="d-flex justify-content-between align-items-center">
-    <h4 class="mb-0">Danh sách sản phẩm</h4>
-    <a href="#!/inchoice-listProduct"> <button class="btn btn-primary">Chọn sản phẩm</button></a>
+<div class="container">
+    <div class="row mb-3">
+        <div class="col-md-6">
+            <button ng-click="createInchoice()" class="btn btn-primary">Tạo hóa đơn</button>
+            <table class="table table-striped" ng-hide="showCart">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Mã HD</th>
+                        <th>Ngày tạo</th>
+                        <th>Thời gian</th>
+                        <th>Trạng thái</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="i in listInchoice">
+                        <td>{{ $index + 1 }}</td>
+                        <td>{{ i.maHD }}</td>
+                        <td>{{ i.ngaytao | date:'dd/MM/yyyy' }}</td>
+                        <td>{{ i.ngaytao | date:'HH:mm:ss' }}</td>
+                        <td>{{ i.trangthai == 0 ? "Chưa thanh toán" : "Đã thanh toán" }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-md-6">
+            <h4 class="mb-0">Danh sách sản phẩm</h4>
+            <a href="#!/inchoice-listProduct" class="btn btn-primary mb-3">Chọn sản phẩm</a>
+            <div class="d-flex flex-wrap">
+                <div class="w-50 p-2" ng-repeat="li in listProduct">
+                    <div class="rounded p-3 mb-3" style="background-color: #f8f9fa;">
+                        <span>Tên sản phẩm: {{ li.ten }}</span><br>
+                        <span>Đơn giá: {{ li.giaban }}</span>
+                        <button ng-click="addTocart(li.id)" class="btn btn-success">Thêm vào giỏ hàng</button>
+                    </div>
+                </div>
+            </div>
+            <h4 class="mb-3">Danh sách giỏ hàng</h4>
+            <a href="#!/inchoice-listCart" class="btn btn-primary mb-3" ng-click="showCart = true">Xem giỏ hàng</a>
+            <table class="table" ng-show="showCart">
+                <thead>
+                    <tr>
+                        <th>Id giỏ hàng</th>
+                        <th>Id_sản phẩm</th>
+                        <th>Số lượng</th>
+                        <th>Đơn giá</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="a in listCart">
+                        <td>{{a.idghct}}</td>
+                        <td>{{a.id_sanpham}}</td>
+                        <td>{{a.soluong}}</td>
+                        <td>{{a.gia}}</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div>
+                <h4>Khách hàng</h4>
+                <a href="#!/Khach_Le" class="btn btn-primary">Chọn khách hàng</a>
+            </div>
+        </div>
+    </div>
 </div>
-<table>
-    <h4>Giỏ hàng</h4>
-</table>

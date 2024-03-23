@@ -47,4 +47,15 @@ window.productsController = function ($scope, $http, $routeParams) {
             })
         }
     }
+    $scope.addTocart = function (productId) {
+        if (productId) {
+            const api = "http://localhost:1235/DetailCart/add";
+            $http.post(api + "/" + productId).then(function (res) {
+                // Xử lý phản hồi từ server nếu cần
+                console.log("Thêm sản phẩm vào giỏ hàng thành công");
+            }).catch(function (error) {
+                console.error("Đã xảy ra lỗi khi thêm sản phẩm vào giỏ hàng:", error);
+            });
+        };
+    }
 }

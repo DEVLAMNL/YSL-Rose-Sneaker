@@ -42,8 +42,19 @@ myApp.config(function ($routeProvider) {
             controller : inchoiceController
         })
         .when('/inchoice-listProduct',{
-            templateUrl: "/admin/sale_at_counter/listProduct.html",
+            templateUrl: "/admin/sale_at_counter/listInchoice.html",
             controller: productsController
         })
-       
+        .when('/inchoice-addProductToCart/:id',{
+            templateUrl: "/admin/sale_at_counter/listInchoice.html",
+            controller: cartController
+        })
+        .when('/inchoice-listCart',{
+            templateUrl: "/admin/sale_at_counter/listInchoice.html",
+            controller: cartController
+        })
+        .otherwise({
+            redirectTo: '/inchoice-listInchoice'
+        });
+        
 })

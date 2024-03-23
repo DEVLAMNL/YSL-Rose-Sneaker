@@ -29,4 +29,5 @@ window.inchoiceController = function ($scope, $http) {
             fetchInchoiceData();
         });
     };
+    
 };
