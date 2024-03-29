@@ -8,6 +8,7 @@ import lombok.*;
 @NoArgsConstructor
 public class khachhangdto {
     private int idkh;
-    private String username;
-    private String password;
+    private String tenkh;
+    private String email;
+    private String sdt;
 }

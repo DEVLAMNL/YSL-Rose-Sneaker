@@ -53,6 +53,10 @@ myApp.config(function ($routeProvider) {
             templateUrl: "/admin/sale_at_counter/listInchoice.html",
             controller: cartController
         })
+        .when('/inchoice-user',{
+            templateUrl: "/admin/sale_at_counter/listInchoice.html",
+            controller: userController
+        })
         .otherwise({
             redirectTo: '/inchoice-listInchoice'
         });

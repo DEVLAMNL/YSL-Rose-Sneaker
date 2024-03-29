@@ -12,7 +12,7 @@ public class giohang {
     private int idgh;
     private int id_sanpham;
     private int id_khachhang;
-
+    private int id_hoadon;
     @ManyToOne
     @JoinColumn(name = "idghct")
     private giohangchitiet giohangchitiet;

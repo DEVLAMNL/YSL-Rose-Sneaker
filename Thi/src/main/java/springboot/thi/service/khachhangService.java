@@ -29,7 +29,7 @@ public class khachhangService {
             return Collections.emptyList();
         }
         return listkhachhang.stream()
-                .map(kh -> new khachhangdto(kh.getIdkh(), kh.getUsername(), kh.getPassword()))
+                .map(kh -> new khachhangdto(kh.getIdkh(),kh.getHoten(), kh.getEmail(), kh.getSodienthoai()))
                 .collect(Collectors.toList());
     }
 

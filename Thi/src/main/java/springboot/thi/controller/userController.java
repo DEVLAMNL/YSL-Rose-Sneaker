@@ -1,6 +1,5 @@
 package springboot.thi.controller;
 
-import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -15,7 +14,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/auth")
 @CrossOrigin("*")
-public class authController {
+public class userController {
 
     @Autowired
     private khachhangRepo khachhangRP;
@@ -28,7 +27,7 @@ public class authController {
         return khachhangRP.save(kh);
     }
 
-    @GetMapping("/get-all")
+    @GetMapping("/user-dto")
     public List<khachhangdto> getall() {
         return khachhangService.GetAll();
     }
@@ -40,7 +39,6 @@ public class authController {
 
     @PostMapping("/login")
     public ResponseEntity<String> login(@RequestBody khachhang khachhang) {
-
 
         khachhang user = khachhangRP.findByUsername(khachhang.getUsername());
 
@@ -54,6 +52,7 @@ public class authController {
 
         return ResponseEntity.ok("Đăng nhập thành công");
     }
+
     @PostMapping("/create")
     public ResponseEntity<khachhang> saveProduct(@RequestBody khachhang khachhang) {
         khachhangRP.save(khachhang);

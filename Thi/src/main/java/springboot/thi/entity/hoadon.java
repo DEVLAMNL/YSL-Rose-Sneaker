@@ -14,9 +14,9 @@ public class hoadon {
     private int idhd;
     private String maHD;
     private Date ngaytao;
-//    @ManyToOne
-//    @JoinColumn(name = "id_hoadonkh")
-//    private khachhang khachhang;
+    @ManyToOne
+    @JoinColumn(name = "id_kh")
+    private khachhang khachhang;
     @ManyToOne
     @JoinColumn(name = "id_hd")
     private giohangchitiet giohangchitiet;
