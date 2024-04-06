@@ -17,7 +17,9 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr ng-repeat="i in listInchoice">
+                            <tr ng-repeat="i in listInchoice"
+                             style="cursor: pointer;"
+                             ng-click="chooseBillWait(i)">
                                 <td>{{ $index + 1 }}</td>
                                 <td>{{ i.maHD }}</td>
                                 <td>{{ i.ngaytao | date:'dd/MM/yyyy' }}</td>
@@ -34,7 +36,7 @@
             <div class="card">
                 <div class="card-body">
                     <h5 class="card-title">Danh sách sản phẩm</h5>
-                    <a href="#!/inchoice-listProduct" class="btn btn-primary mb-3">Chọn sản phẩm</a>
+                    <a ng-click="chooseProduct()" class="btn btn-primary mb-3">Chọn sản phẩm</a>
                     <div class="d-flex flex-wrap">
                         <div class="w-50 p-2" ng-repeat="li in listProduct">
                             <div class="rounded p-3 mb-3" style="background-color: #f8f9fa;">

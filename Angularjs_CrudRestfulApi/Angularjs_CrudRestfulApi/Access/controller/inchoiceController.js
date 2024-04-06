@@ -1,6 +1,10 @@
 window.inchoiceController = function ($scope, $http) {
     $scope.index = 0;
     $scope.listInchoice = [];
+    $scope.orderCurrent = {}
+
+    //product
+    const api = 'http://localhost:1235/rest/product/getAll';
 
     // Hàm để tải dữ liệu inchoice từ máy chủ
     function fetchInchoiceData() {
@@ -8,6 +12,12 @@ window.inchoiceController = function ($scope, $http) {
         $http.get(inchoiceApi).then(function(res){
             $scope.listInchoice = res.data;
         });
+    }
+
+    const fetchProducts = () => {
+        $http.get(api).then(function (res) {
+            $scope.listProduct = res.data
+        })
     }
 
     // Gọi hàm tải dữ liệu khi controller được khởi tạo
@@ -29,5 +39,26 @@ window.inchoiceController = function ($scope, $http) {
             fetchInchoiceData();
         });
     };
+
+    $scope.chooseProduct = () => {
+        fetchProducts()
+    }
+
+    $scope.chooseBillWait = (bill) => {
+        console.log(bill)
+        $scope.orderCurrent = bill;
+    }
+
+    $scope.addTocart = function (productId) {
+        if (productId) {
+            const api = "http://localhost:1235/DetailCart/add";
+            axios.post(api + "?productId=" + productId + "&orderID=" + $scope.orderCurrent.idhd).then(function (res) {
+                // Xử lý phản hồi từ server nếu cần
+                console.log("Thêm sản phẩm vào giỏ hàng thành công");
+            }).catch(function (error) {
+                console.error("Đã xảy ra lỗi khi thêm sản phẩm vào giỏ hàng:", error);
+            });
+        };
+    }
     
 };

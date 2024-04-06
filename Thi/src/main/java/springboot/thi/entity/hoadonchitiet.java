@@ -10,13 +10,18 @@ import java.math.BigDecimal;
 public class hoadonchitiet {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private int idhdct;
+
     @ManyToOne
-    @JoinColumn(name = "id")
+    @JoinColumn(name = "id_product")
     private product product;
+
     @ManyToOne
-    @JoinColumn(name = "idhd")
+    @JoinColumn(name = "id_bill")
     private hoadon hoadon;
+
     private int soluong;
+
     private BigDecimal dongia;
 }
