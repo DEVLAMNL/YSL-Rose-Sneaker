@@ -26,15 +26,8 @@ public class cartController {
         return cartRepo.findAll();
     }
 
-    @PostMapping("/addproduct")
-    public ResponseEntity<?> save(@RequestBody product product) {
-//        cartRepo.insertCart(c,product.getId());
-        return new ResponseEntity<>(product, HttpStatus.CREATED);
-    }
-
-    @PostMapping("/{id}")
-    public ResponseEntity<product> getIdproduct(@RequestBody product product) {
-        productRepo.getById(product.getId());
-        return new ResponseEntity<>(product, HttpStatus.NOT_FOUND);
-    }
+//    @GetMapping("/getTotal")
+//    public void TotalProductInCart(){
+//            cartRepo.TotalProductInCart();
+//    }
 }
