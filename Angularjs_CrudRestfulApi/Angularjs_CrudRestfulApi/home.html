@@ -9,56 +9,63 @@
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
     <style>
-        /* Custom styling */
         .left-panel {
+            width: 300px;
             background-color: #f8f9fa;
-            /* Màu nền trái */
             border-right: 1px solid #dee2e6;
-            /* Đường viền bên phải */
             min-height: 100vh;
-            /* Chiều cao tối thiểu */
             padding: 20px;
-            /* Khoảng cách giữa các phần tử trong left-panel */
         }
 
         .right-panel {
+            width: auto;
             min-height: 100vh;
-            /* Chiều cao tối thiểu */
             padding: 20px;
-            /* Khoảng cách giữa khung và nội dung */
         }
 
         .left-panel ul {
             list-style-type: none;
-            /* Loại bỏ kiểu danh sách */
             padding: 0;
-            /* Loại bỏ khoảng cách giữa các phần tử trong danh sách */
         }
 
         .left-panel ul li a {
             display: block;
             padding: 10px 0;
-            /* Khoảng cách giữa các nút */
             text-decoration: none;
-            /* Loại bỏ gạch chân */
             color: #e9e9e9;
-            /* Màu chữ */
             margin-bottom: 10px;
         }
 
         .left-panel ul li a:hover {
             background-color: #e9ecef;
-            /* Màu nền khi hover */
         }
+        .header-user{
+            height: 50px;
+            width: auto;
+            padding-left: 950px;
+            border: 0.5px solid #dee2e6;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            padding-top: 10px;
+            color: #d79e9e;
+        }
+        .rounded-link {
+        display: inline-block;
+        padding: 5px 10px;
+        margin-top: 10px;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        text-decoration: none;
+        margin-left: 10px;
+        color: #7f7fd7;
+    }
     </style>
 </head>
 
 <body ng-app="myApp">
     <div class="container-fluid">
         <div class="row">
-            <!-- Phần bên trái -->
             <div class="col-md-2 left-panel">
-                <!-- Các nút chức năng -->
                 <ul>
                     <li>
                         <a href="#!/" class="btn btn-primary">dashboard</a>
@@ -87,8 +94,10 @@
                     </li>
                 </ul>
             </div>
-            <!-- Phần giữa -->
             <div class="col-md-10 right-panel">
+                <header class="header-user">
+                    <Span>Rosé</Span>
+                </header>
                 <div ng-view></div>
             </div>
         </div>

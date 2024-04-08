@@ -25,9 +25,22 @@ public class inchoiceController {
         return listHoaDon;
     }
 
+    @GetMapping("/getIchoicebyTrangthai")
+    public List<hoadon> TakeMaHD(Integer trangthai) {
+        trangthai = 0;
+        List<hoadon> listHoaDon = inchoiceRepo.listhoahon(trangthai);
+        return listHoaDon;
+    }
+
+    @GetMapping("/{maHD}")
+    public List<hoadon> getMa(@PathVariable("maHD") String Ma) {
+        List<hoadon> listIchoice = inchoiceRepo.getAllByMa(Ma);
+        return listIchoice;
+    }
+
     @PostMapping("/createInchoice")
     public ResponseEntity<hoadon> createInchoice(@RequestBody hoadon hoadon) {
-         inchoiceRepo.save(hoadon);
+        inchoiceRepo.save(hoadon);
         return ResponseEntity.ok(hoadon);
     }
 

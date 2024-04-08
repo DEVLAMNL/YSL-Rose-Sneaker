@@ -1,62 +1,75 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Dashboard</title>
-    <!-- Add Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+Knujsl7/1L_dstPt3HV5HzF6Gvk/e9T9hXmJ58bldgTk+" crossorigin="anonymous">
-    <!-- Add custom CSS -->
+    <title>Border Cong</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+<style>
+    .outer-container {
+        width: 1000px;
+        border: 0.5px solid #e7e0e0;
+        padding: 20px;
+        margin-bottom: 20px;
+        border-radius: 10px;
+    }
+
+    .inner-container {
+        border: 0.5px solid #e7e0e0;
+        padding: 10px;
+        background-color: white;
+        margin-bottom: 10px;
+        border-radius: 5px;
+    }
+
+    .rounded-link {
+        display: inline-block;
+        padding: 5px 10px;
+        margin-top: 10px;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        text-decoration: none;
+    }
+    .cart-shopping{
+        height: 350px;
+        border: 0.5px solid #e7e0e0;
+        padding: 10px;
+        background-color: white;
+        margin-bottom: 10px;
+        border-radius: 5px; 
+    }
+</style>
+
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">Admin Dashboard</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Products</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Orders</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Customers</a>
-                    </li>
-                </ul>
+    <div class="outer-container">
+        <i class="fa-solid fa-house"></i>
+            /<span> Bán hàng tại quầy</span>
+        <div class="inner-container">
+            <button class="btn btn-primary">Tạo hóa đơn</button>
+            <div>
+                <a class="rounded-link">HD1</a>
+                <a class="rounded-link">HD2</a>
             </div>
         </div>
-    </nav>
-
-    <div class="container mt-5">
-        <div class="row">
-            <div class="col-md-4">
-                <div class="card">
-                    <img src="https://via.placeholder.com/150" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Product 1</h5>
-                        <p class="card-text">$999.99</p>
-                        <p class="card-text">Category: Electronics</p>
-                        <p class="card-text">Details: High-end headphones with noise-cancelling technology.</p>
-                    </div>
-                </div>
-            </div>
-            <!-- Add more products here -->
+        <div class="cart-shopping">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <span>Giỏ hàng</span>
+            <br>
+            <button class="btn btn-primary">Chọn sản phẩm</button>
+        </div>
+        <div class="inner-container">
+            <i class="fa-solid fa-user"></i>
+            <span>Khách hàng</span>
+            <br>
+            <span>Loại khách hàng : Khách lẻ</span>
+            <button class="btn btn-primary">Chọn khách hàng</button>
+        </div>
+        <div class="inner-container">
+            Thanh toán
         </div>
     </div>
-
-    <!-- Bootstrap core JavaScript-->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Core plugin JavaScript-->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-
-    <!-- Custom scripts for all pages-->
-    <script src="js/sb-admin.min.js"></script>
 </body>
+
 </html>

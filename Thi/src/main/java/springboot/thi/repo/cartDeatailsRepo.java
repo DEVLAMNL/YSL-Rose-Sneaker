@@ -13,8 +13,11 @@ public interface cartDeatailsRepo extends JpaRepository<giohangchitiet, Integer>
     @Modifying
     @Query(value = "SELECT dc.idghct, pr.ten AS tenSanPham, dc.soluong, dc.gia " +
             "FROM detailcart dc " +
-            "JOIN hoadon hd ON hd.idhd = dc.id_hd " + // Thêm khoảng trống sau JOIN hoadon
+            "JOIN hoadon hd ON hd.idhd = dc.id_hd " +
             "JOIN product pr ON pr.id = dc.id_sanpham", nativeQuery = true)
     List<giohangchitiet> listCartDetails();
+
+    @Query(value = "select count(idghct) from detailcart", nativeQuery = true)
+    int getTotalProductInCart(); // Sử dụng int thay vì List<giohangchitiet>
 
 }

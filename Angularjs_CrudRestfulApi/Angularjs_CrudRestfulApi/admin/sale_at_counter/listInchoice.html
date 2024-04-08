@@ -5,9 +5,10 @@
             <div class="card">
                 <div class="card-body">
                     <h5 class="card-title">Tạo hóa đơn</h5>
+                    <button ng-repeat="li in listInchoice" class="rounded-link" ng-click="getmaHD(li.maHD)">{{li.maHD}}</button>
                     <button ng-click="createInchoice()" class="btn btn-primary">Tạo hóa đơn</button>
                     <table class="table table-striped mt-3" ng-hide="showCart">
-                        <thead>
+                        <!-- <thead>
                             <tr>
                                 <th>#</th>
                                 <th>Mã HD</th>
@@ -26,7 +27,7 @@
                                 <td>{{ i.ngaytao | date:'HH:mm:ss' }}</td>
                                 <td>{{ i.trangthai == 0 ? "Chưa thanh toán" : "Đã thanh toán" }}</td>
                             </tr>
-                        </tbody>
+                        </tbody> -->
                     </table>
                 </div>
             </div>
@@ -42,12 +43,14 @@
                             <div class="rounded p-3 mb-3" style="background-color: #f8f9fa;">
                                 <span>Tên sản phẩm: {{ li.ten }}</span><br>
                                 <span>Đơn giá: {{ li.giaban }}</span>
-                                <button ng-click="addTocart(li.id)" class="btn btn-success mt-2">Thêm vào giỏ hàng</button>
+                                <button ng-click="addTocart(li.id)" class="btn btn-success mt-2">Thêm vào giỏ
+                                    hàng</button>
                             </div>
                         </div>
                     </div>
                     <h5 class="card-title mt-3">giỏ hàng</h5>
-                    <a href="#!/inchoice-listCart" class="btn btn-primary mb-3" ng-click="showCart = true">Xem giỏ hàng</a>
+                    <a href="#!/inchoice-listCart" class="btn btn-primary mb-3" ng-click="showCart = true">Xem giỏ
+                        hàng</a>
                     <table class="table" ng-show="showCart">
                         <thead>
                             <tr>
@@ -69,7 +72,7 @@
                     <div>
                         <h5 class="card-title mt-3">Khách hàng</h5>
                         <a href="#!/inchoice-user" class="btn btn-primary">Chọn khách hàng</a>
-                        <table class="table" >
+                        <table class="table">
                             <thead>
                                 <tr>
                                     <th>#</th>
@@ -104,21 +107,7 @@
             <div class="card">
                 <div class="card-body">
                     <h5 class="card-title">Thanh toán</h5>
-                    <form>
-                        <div class="form-group">
-                            <label for="name">Tên khách hàng:</label>
-                            <input type="text" class="form-control" id="name">
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email:</label>
-                            <input type="email" class="form-control" id="email">
-                        </div>
-                        <div class="form-group">
-                            <label for="address">Địa chỉ:</label>
-                            <input type="text" class="form-control" id="address">
-                        </div>
-                        <button type="submit" class="btn btn-primary">Thanh toán</button>
-                    </form>
+
                 </div>
             </div>
         </div>
